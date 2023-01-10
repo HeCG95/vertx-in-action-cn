@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1584205420 source:e:\obank\code\github\hecg95\vertx-in-action-cn\java-nio\lib\dll\dll\main.cpp
+	"main.h"
+
+1584205420 e:\obank\code\github\hecg95\vertx-in-action-cn\java-nio\lib\dll\dll\main.h
+	<windows.h>
+
+1673342684 source:e:\obank\code\github\hecg95\vertx-in-action-cn\java-nio\lib\dll\dll\hellojni.c
+	<jni.h>
+	<stdio.h>
+	"HelloJNI.h"
+
+1673342323 e:\obank\code\github\hecg95\vertx-in-action-cn\java-nio\lib\dll\dll\hellojni.h
+	<jni.h>
+

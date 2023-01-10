@@ -1,0 +1,4 @@
+EXPORTS
+    DllMain @1
+    Java_HelloJNI_sayHello @2
+    SomeFunction @3

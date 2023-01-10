@@ -15,6 +15,7 @@ public class ByteBufferTest {
 
     ByteBuffer buffer = ByteBuffer.allocate(10);
 //    ByteBuffer dByteBuffer = ByteBuffer.allocateDirect(10);
+    System.out.println("buffer.order() "+buffer.order());
 
     printInfo(buffer);
 
