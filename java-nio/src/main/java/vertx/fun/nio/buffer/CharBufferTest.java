@@ -1,6 +1,5 @@
 package vertx.fun.nio.buffer;
 
-import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 
 /**
