@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1584205420 source:e:\obank\code\github\hecg95\vertx-in-action-cn\java-nio\lib\dll\buffer\main.cpp
+	"main.h"
+
+1584205420 e:\obank\code\github\hecg95\vertx-in-action-cn\java-nio\lib\dll\buffer\main.h
+	<windows.h>
+
