@@ -40,6 +40,10 @@
 				</Linker>
 			</Target>
 		</Build>
+		<Unit filename="HelloBuffer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="HelloBuffer.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="main.h" />
 		<Extensions>
