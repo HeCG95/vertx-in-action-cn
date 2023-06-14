@@ -10,7 +10,7 @@ public class SynchronousEcho {
   public static void main(String[] args) throws Throwable {
     ServerSocket server = new ServerSocket();
     server.bind(new InetSocketAddress(3000));
-    while (true) {   // <1>
+    while (true) {   // <1> 接收新线程
       Socket socket = server.accept();
       new Thread(clientHandler(socket)).start();
     }
@@ -25,9 +25,9 @@ public class SynchronousEcho {
           new OutputStreamWriter(socket.getOutputStream()))) {
         String line = "";
         while (!"/quit".equals(line)) {
-          line = reader.readLine();      // <2>
+          line = reader.readLine();      // <2> 读会阻塞连接
           System.out.println("~ " + line);
-          writer.write(line + "\n");  // <3>
+          writer.write(line + "\n");  // <3> 写也会阻塞
           writer.flush();
         }
       } catch (IOException e) {
