@@ -1,4 +1,4 @@
-package chapter2.opts;
+package chapter2._05_opts;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.DeploymentOptions;
@@ -18,12 +18,21 @@ public class SampleVerticle extends AbstractVerticle {
 
   public static void main(String[] args) {
     Vertx vertx = Vertx.vertx();
-    for (int n = 0; n < 4; n++) {
+    // 1+2+3
+    for (int n = 0; n < 5; n++) {
       JsonObject conf = new JsonObject().put("n", n);
       DeploymentOptions opts = new DeploymentOptions()
         .setConfig(conf)
         .setInstances(n);
-      vertx.deployVerticle("chapter2.opts.SampleVerticle", opts);
+      vertx.deployVerticle("chapter2._05_opts.SampleVerticle", opts, ar->{
+        if(ar.succeeded()){
+//          System.out.println(">>>>>>> "+vertx.getOrCreateContext().getInstanceCount());
+        }else {
+//          System.out.println("Failed");
+//          System.out.println(">>>>>>> "+vertx.getOrCreateContext().getInstanceCount());
+//          ar.cause().printStackTrace();
+        }
+      });
     }
   }
 }
