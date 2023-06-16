@@ -1,4 +1,4 @@
-package chapter2.worker;
+package chapter2._06_worker;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.DeploymentOptions;
@@ -28,6 +28,6 @@ public class WorkerVerticle extends AbstractVerticle{
     DeploymentOptions opts = new DeploymentOptions()
       .setInstances(2)
       .setWorker(true);
-    vertx.deployVerticle("chapter2.worker.WorkerVerticle", opts);
+    vertx.deployVerticle("chapter2._06_worker.WorkerVerticle", opts);
   }
 }

@@ -1,4 +1,4 @@
-package chapter2.dissecting;
+package chapter2._08_dissecting;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Context;

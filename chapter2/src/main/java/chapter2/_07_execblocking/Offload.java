@@ -1,4 +1,4 @@
-package chapter2.execblocking;
+package chapter2._07_execblocking;
 
 import io.vertx.core.*;
 import org.slf4j.Logger;
