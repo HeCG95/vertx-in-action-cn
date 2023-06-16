@@ -1,4 +1,4 @@
-package chapter2.blocker;
+package chapter2._02_blocker;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;

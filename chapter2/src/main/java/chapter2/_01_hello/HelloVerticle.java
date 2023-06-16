@@ -1,4 +1,4 @@
-package chapter2.hello;
+package chapter2._01_hello;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
@@ -10,6 +10,11 @@ public class HelloVerticle extends AbstractVerticle {
   private final Logger logger = LoggerFactory.getLogger(HelloVerticle.class);
 
   private long counter = 1;
+
+  @Override
+  public void stop() throws Exception {
+    System.out.println(">>>>>>>>>>>>>>>>>>>>> done");
+  }
 
   @Override
   public void start() {

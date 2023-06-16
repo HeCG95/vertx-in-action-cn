@@ -1,7 +1,6 @@
-package chapter2.future;
+package chapter2._03_future;
 
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Future;
 import io.vertx.core.Promise;
 import io.vertx.core.Vertx;
 
