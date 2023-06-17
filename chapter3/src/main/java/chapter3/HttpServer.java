@@ -51,6 +51,7 @@ public class HttpServer extends AbstractVerticle {
     });
 
     response.endHandler(v -> {
+      System.out.println(" end response");
       consumer.unregister();
       ticks.cancel();
     });
