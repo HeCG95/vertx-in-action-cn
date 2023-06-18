@@ -1,4 +1,4 @@
-package chapter4.streamapis;
+package chapter4._01_streamapis;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,7 +7,7 @@ import java.io.IOException;
 public class JdkStreams {
 
   public static void main(String[] args) {
-    File file = new File("build.gradle.kts");
+    File file = new File("E:\\Code\\Github\\vertx-in-action-cn\\chapter4\\build.gradle.kts");
     byte[] buffer = new byte[1024];
     try (FileInputStream in = new FileInputStream(file)) {
       int count = in.read(buffer);

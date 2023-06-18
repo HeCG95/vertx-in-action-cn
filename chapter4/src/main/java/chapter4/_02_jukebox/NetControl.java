@@ -1,4 +1,4 @@
-package chapter4.jukebox;
+package chapter4._02_jukebox;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.buffer.Buffer;
