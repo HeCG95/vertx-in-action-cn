@@ -22,6 +22,6 @@ public class Main {
         .put("http.port", 3002)));
 
     vertx.deployVerticle("chapter5.snapshot.SnapshotService");
-    vertx.deployVerticle("chapter5.future.CollectorService");
+    vertx.deployVerticle("chapter5._02_future.CollectorService");
   }
 }
