@@ -1,4 +1,4 @@
-package chapter5.future;
+package chapter5._02_future;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.CompositeFuture;
