@@ -80,6 +80,8 @@ public class Jukebox extends AbstractVerticle {
   private void schedule(Message<JsonObject> request) {
     String file = request.body().getString("file");
     logger.info("Scheduling {}", file);
+    // This allows us to automatically resume playing
+    // when no track is playing and we schedule a new one
     if (playlist.isEmpty() && currentMode == State.PAUSED) {
       currentMode = State.PLAYING;
     }
