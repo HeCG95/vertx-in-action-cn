@@ -6,6 +6,8 @@ public class Main {
 
   public static void main(String[] args) {
     /**
+     * curl -o out.mp3 http://localhost:8080/download/test.mp3
+     *
      * nc 127.0.0.1 3000
      * /list
      * /schedule test.mp3
