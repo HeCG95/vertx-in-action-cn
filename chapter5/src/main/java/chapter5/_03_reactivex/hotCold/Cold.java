@@ -1,4 +1,4 @@
-package chapter5._03_reactivex;
+package chapter5._03_reactivex.hotCold;
 
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;

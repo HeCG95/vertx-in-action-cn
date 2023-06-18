@@ -1,4 +1,4 @@
-package chapter5._03_reactivex;
+package chapter5._03_reactivex.hotCold;
 
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subjects.ReplaySubject;
