@@ -143,6 +143,9 @@ public class Jukebox extends AbstractVerticle {
       .putHeader("Content-Type", "audio/mpeg")
       .setChunked(true);
 
+    /**
+     * 背压管理
+     */
     file.handler(buffer -> {
       response.write(buffer);
       if (response.writeQueueFull()) {
