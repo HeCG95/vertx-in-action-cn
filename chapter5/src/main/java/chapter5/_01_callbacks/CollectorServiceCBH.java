@@ -1,4 +1,4 @@
-package chapter5.callbacks;
+package chapter5._01_callbacks;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.http.HttpServerRequest;
@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class CollectorService extends AbstractVerticle {
+public class CollectorServiceCBH extends AbstractVerticle {
 
-  private final Logger logger = LoggerFactory.getLogger(CollectorService.class);
+  private final Logger logger = LoggerFactory.getLogger(CollectorServiceCBH.class);
   private WebClient webClient;
 
   @Override
@@ -44,29 +44,23 @@ public class CollectorService extends AbstractVerticle {
           if (counter.incrementAndGet() == 3) {
             JsonObject data = new JsonObject()
               .put("data", new JsonArray(responses));
-            sendToSnapshot(request, data);
+            webClient
+              .post(4000, "localhost", "/")
+              .expect(ResponsePredicate.SC_SUCCESS)
+              .sendJsonObject(data, ar1 -> {
+                if (ar1.succeeded()) {
+                  request.response()
+                    .putHeader("Content-Type", "application/json")
+                    .end(data.encode());
+                } else {
+                  logger.error("Snapshot down?", ar1.cause());
+                  request.response().setStatusCode(500).end();
+                }
+              });
+
           }
         });
     }
   }
 
-  private void sendToSnapshot(HttpServerRequest request, JsonObject data) {
-    webClient
-      .post(4000, "localhost", "/")
-      .expect(ResponsePredicate.SC_SUCCESS)
-      .sendJsonObject(data, ar -> {
-        if (ar.succeeded()) {
-          sendResponse(request, data);
-        } else {
-          logger.error("Snapshot down?", ar.cause());
-          request.response().setStatusCode(500).end();
-        }
-      });
-  }
-
-  private void sendResponse(HttpServerRequest request, JsonObject data) {
-    request.response()
-      .putHeader("Content-Type", "application/json")
-      .end(data.encode());
-  }
 }

@@ -18,7 +18,7 @@ import java.util.List;
 
 public class CollectorService extends AbstractVerticle {
 
-  private final Logger logger = LoggerFactory.getLogger(chapter5.callbacks.CollectorService.class);
+  private final Logger logger = LoggerFactory.getLogger(chapter5._01_callbacks.CollectorService.class);
   private WebClient webClient;
 
   @Override

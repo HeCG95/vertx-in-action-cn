@@ -1,4 +1,4 @@
-package chapter5.reactivex.intro;
+package chapter5._03_reactivex.intro;
 
 import io.reactivex.Flowable;
 import io.reactivex.Observable;

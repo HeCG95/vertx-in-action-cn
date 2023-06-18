@@ -1,4 +1,4 @@
-package chapter5.reactivex;
+package chapter5._03_reactivex;
 
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subjects.ReplaySubject;

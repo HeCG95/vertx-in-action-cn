@@ -1,4 +1,4 @@
-package chapter5.callbacks;
+package chapter5._01_callbacks;
 
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
@@ -22,6 +22,6 @@ public class Main {
         .put("http.port", 3002)));
 
     vertx.deployVerticle("chapter5.snapshot.SnapshotService");
-    vertx.deployVerticle("chapter5.callbacks.CollectorService");
+    vertx.deployVerticle("chapter5._01_callbacks.CollectorService");
   }
 }
