@@ -7,7 +7,7 @@ import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 
-@ProxyGen
+@ProxyGen // To generate an event-bus proxy
 @VertxGen // To generate RxJava 2 / Kotlin / whatever bindings
 public interface SensorDataService {
 

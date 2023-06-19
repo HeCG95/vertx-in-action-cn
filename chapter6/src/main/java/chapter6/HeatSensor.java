@@ -26,6 +26,7 @@ public class HeatSensor extends AbstractVerticle {
     JsonObject payload = new JsonObject()
       .put("id", id)
       .put("temp", temp);
+    System.out.println("payload:"+payload);
     vertx.eventBus().publish("sensor.updates", payload);
     scheduleNextUpdate();
   }

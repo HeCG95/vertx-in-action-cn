@@ -12,6 +12,7 @@ public class RxProxyClient extends AbstractVerticle {
 
   @Override
   public void start() {
+    // Obtaining a service proxy
     SensorDataService service = SensorDataService.createProxy(vertx, "sensor.data-service");
     service.rxAverage()
       .delaySubscription(3, TimeUnit.SECONDS, RxHelper.scheduler(vertx))
