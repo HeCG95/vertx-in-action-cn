@@ -1,0 +1,29 @@
+ingestion-service: 接收计步器信息
+public-api: 暴露公共API
+
+user-webapp: 用户Web
+dashboard-webapp: 统计信息Web
+
+user-profile-service: 管理用户资料
+activity-service: 管理活动数据
+congrats-service: 邮件通知模块
+event-stats-service: 计算各种类型统计数据
+
+user-webapp
+->public-api
+    ->user-profile-service
+    ->activity-service
+
+dashboard-webapp
+->user-profile-service
+
+
+ingestion-service
+->Kafka topics
+
+Kafka topics
+->dashboard-webapp
+->event-stats-service
+->congrats-service
+
+
