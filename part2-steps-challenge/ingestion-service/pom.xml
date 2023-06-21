@@ -43,18 +43,18 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-junit5</artifactId>
-      <scope>test</scope>
+<!--      <scope>test</scope>-->
     </dependency>
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-junit5-rx-java2</artifactId>
-      <scope>test</scope>
+<!--      <scope>test</scope>-->
       <!--   https://github.com/vert-x3/wiki/wiki/3.9.5-Deprecations-and-breaking-changes#regression-due-to-rxjava1-and-rxjava2-deps-being-optional   -->
     </dependency>
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web</artifactId>
-      <scope>test</scope>
+<!--      <scope>test</scope>-->
     </dependency>
     <dependency>
       <groupId>org.assertj</groupId>
