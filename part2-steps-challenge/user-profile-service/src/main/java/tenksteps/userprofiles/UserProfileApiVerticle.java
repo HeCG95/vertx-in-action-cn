@@ -47,6 +47,7 @@ public class UserProfileApiVerticle extends AbstractVerticle {
     BodyHandler bodyHandler = BodyHandler.create();
     router.post().handler(bodyHandler);
     router.put().handler(bodyHandler);
+
     router.post("/register")
       .handler(this::validateRegistration)
       .handler(this::register);

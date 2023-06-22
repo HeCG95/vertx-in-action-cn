@@ -19,7 +19,8 @@ class CryptoHelper {
   private static String read(String file) throws IOException {
     Path path = Paths.get("public-api", file);
     if (!path.toFile().exists()) {
-      path = Paths.get("..", "public-api", file);
+//      path = Paths.get("..", "public-api", file);
+      path = Paths.get("E:\\Code\\Github\\vertx-in-action-cn\\part2-steps-challenge", "public-api", file);
     }
     return String.join("\n", Files.readAllLines(path, StandardCharsets.UTF_8));
   }
