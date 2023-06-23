@@ -76,10 +76,13 @@ public class PublicApiVerticle extends AbstractVerticle {
       .allowedMethods(allowedMethods));
 
     BodyHandler bodyHandler = BodyHandler.create();
+    // 预定义handler 抽取HTTP请求体
     router.post().handler(bodyHandler);
     router.put().handler(bodyHandler);
 
     String prefix = "/api/v1";
+
+    // Vert.x router handler for JWT authentication
     JWTAuthHandler jwtHandler = JWTAuthHandler.create(jwtAuth);
 
     // Account
@@ -105,6 +108,7 @@ public class PublicApiVerticle extends AbstractVerticle {
 
   private void checkUser(RoutingContext ctx) {
     String subject = ctx.user().principal().getString("sub");
+    logger.info("subject -> "+subject);
     if (!ctx.pathParam("username").equals(subject)) {
       sendStatusCode(ctx, 403);
     } else {
@@ -155,6 +159,22 @@ public class PublicApiVerticle extends AbstractVerticle {
   }
 
   private String makeJwtToken(String username, String deviceId) {
+    /**
+     * Header:
+     * {
+     *     "typ": "JWT",
+     *     "alg": "RS256"
+     * }
+     *
+     * Payload:
+     * {
+     *     "deviceId": "a1b2",
+     *     "iat": 1565167475,// the date when the token was issued
+     *     "exp": 1565772275,// the token expiration date
+     *     "iss": "10k-steps-api",
+     *     "sub": "username"
+     * }
+     */
     JsonObject claims = new JsonObject()
       .put("deviceId", deviceId);
     JWTOptions jwtOptions = new JWTOptions()
